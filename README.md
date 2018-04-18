@@ -11,10 +11,10 @@
 
 3.输入命令，更新软件源与升级
 
-	 apt update
-	 apt upgrade
-	 apt update
-	 apt upgrade
+`apt update
+ apt upgrade
+ apt update
+ apt upgrade`
 
 4.移除表头简介文字
 
