@@ -42,6 +42,8 @@
 
 `	apt install openssh git vim`
 
+vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
+
 2.配置ssh生成密钥
 首先检查SSH KEY
 
@@ -130,7 +132,7 @@ clone项目到本地，由于不同库有两种方式(此处的username为目标
 
 > 把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
 > 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
-> 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改。
+> 此后，每次本地提交后，只要有必要，就可以使用命令`git push origin master`推送最新修改。
 
 8.推送更新
 
