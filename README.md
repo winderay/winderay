@@ -11,24 +11,21 @@
 
 3.输入命令，更新软件源与升级
 
-` 	apt update
-
+	``apt update
 	apt upgrede
-
 	apt update
-
-	apt upgrede `
+	apt upgrede``
 
 4.移除表头简介文字
 
-` 	vi .hushlogin`
+`	vi .hushlogin`
 
 输入:wq保存退出
 
 5.美化终端
 安装ZSH的oh-my-zsh
 
-` 	apt install curl`
+`	apt install curl`
 
 输入下列代码安装
 
@@ -51,9 +48,7 @@
 若是已有密钥，备份并建立新的密钥
 
 `	mkdir key_backup
-
 	cp id_rsa* key_backup
-
 	rm id_rsa*`
 生成新密钥
 
