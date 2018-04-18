@@ -11,13 +11,10 @@
 
 3.输入命令，更新软件源与升级
 
-<<<<<<< HEAD
 `	apt update`
 `	apt upgrede`
-=======
-' 	apt update
-	apt upgrede '
->>>>>>> 02701257cbc730344490911c94af61e5d3ddc6ed
+`	apt update`
+`	apt upgrede`
 
 4.移除表头简介文字
 
@@ -45,8 +42,8 @@
 2.配置ssh生成密钥
 首先检查SSH KEY
 
-`	cd ~/.ssh
-	ls`
+`	cd ~/.ssh`
+`	ls`
 
 若是已有密钥，备份并建立新的密钥
 
