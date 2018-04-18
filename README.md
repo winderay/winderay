@@ -11,8 +11,8 @@
 
 3.输入命令，更新软件源与升级
 
-'	apt update
-	apt upgrede'
+' 	apt update
+	apt upgrede '
 
 4.移除表头简介文字
 
