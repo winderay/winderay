@@ -80,9 +80,12 @@ vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
 
 在终端输入下列代码用于github验证
 
-`	git config –global user.name “your_username”`
+`	git config --global user.name “your_username”`
 
-`	git config –global user.email “your_email”`
+`	git config --global user.email “your_email”`
+
+> 取消全局设置方法`git config --global --unset user.email`
+> 添加config：` git config --local user.email "email"`
 
 测试是否成功
 
