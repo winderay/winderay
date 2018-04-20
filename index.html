@@ -1,19 +1,19 @@
 ---
 
 　　layout: default
-　　title: 我的Blog
+　　title: 简单博客
 
 ---
 
-　<title>　{{ page.title }}</title>
+<head>{{ page.title }}</head>
+
 <body>
-<h>　最新文章 </h>
+<h>最新文章</h>
 
 　　{% for post in site.posts %}
 
-　　　　<li> {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</li>
-	<li> {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</li>
+　　<li> {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</li>
 
-　　　　{% endfor %}
+    {% endfor %}
 
 </body>
