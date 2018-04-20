@@ -1,19 +1,20 @@
-<DOCTYPE html>
+---
 
-<html>
+　　layout: default
+　　title: 我的Blog
 
-	<head>
+---
 
-	<meta charset=utf-8" />
+　　<h2>{{ page.title }}</h2>
 
-	<title>ceshi</title>
+　　<p>最新文章</p>
 
-	</head>
+　　<ul>
 
-	<body>
+　　　　{% for post in site.posts %}
 
-		ceshineirong
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 
-	</body>
+　　　　{% endfor %}
 
-</html>
+　　</ul>
