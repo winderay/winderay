@@ -5,12 +5,15 @@
 
 ---
 
-　　{{ page.title }}
-
-　#　最新文章
+　<title>　{{ page.title }}</title>
+<body>
+<h>　最新文章 </h>
 
 　　{% for post in site.posts %}
 
-　　　　- {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}
+　　　　<li> {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</li>
+	<li> {{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</li>
 
 　　　　{% endfor %}
+
+</body>
