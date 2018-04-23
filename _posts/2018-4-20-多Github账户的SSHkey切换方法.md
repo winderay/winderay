@@ -19,16 +19,18 @@ git config --global user.email "邮箱"
 
 要想配置多个账户需要先取消全局配置。
 
-` git config --global --unset user.name`
-
-` git config --global --unset user.email`
+```
+git config --global --unset user.name
+git config --global --unset user.email
+```
 
 此时就可以分别在不同的库，配置各自的用户名和邮箱，以下操作在
 各自库文件下进行。
 
-` git config --local user.name`
-
-` git config --local user.email`
+```
+git config --local user.name
+git config --local user.email
+```
 
 ## 二、生成第一个or新的KEY
 
@@ -41,9 +43,10 @@ git config --global user.email "邮箱"
 
 ## 三、新建SSH配置文件
 
-` cd ~/.ssh/`
-
-` vim config`
+```
+cd ~/.ssh/
+vim config
+```
 
 输入下列内容
 
@@ -61,9 +64,10 @@ git config --global user.email "邮箱"
 
 ## 四、测试配置是否正确
 
-` ssh -T git@github.com`
-
-` ssh -T git@xxx.github.com`
+```
+ssh -T git@github.com
+ssh -T git@xxx.github.com
+```
 
     若是分别返回Hi [不同名字]!You've successfully authenticated，则说明配置成功。
 
@@ -81,9 +85,10 @@ git config --global user.email "邮箱"
 
     或者提交内容时，修改remote
 
-` git remote rm origin`
-
-` git rwmote add origin git@xxx.github.com:username/repo.git`
+```
+git remote rm origin
+git rwmote add origin git@xxx.github.com:username/repo.git
+```
 
 ## 以上
 

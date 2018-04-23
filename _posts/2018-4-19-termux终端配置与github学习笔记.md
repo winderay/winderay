@@ -16,17 +16,18 @@ title: termux和github pages设置学习记
 
 3.输入命令，更新软件源与升级
 
-`	apt update`
-
-`	apt upgrade`
-
-`	apt update`
-
-`	apt upgrade`
+```
+apt update
+apt upgrade
+apt update
+apt upgrade
+```
 
 4.移除表头简介文字
 
-`	vi .hushlogin`
+```
+vi .hushlogin
+```
 
 输入:wq保存退出
 
@@ -52,17 +53,18 @@ vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
 2.配置ssh生成密钥
 首先检查SSH KEY
 
-`	cd ~/.ssh`
-
-`	ls`
+```
+cd ~/.ssh`
+ls
+```
 
 若是已有密钥，备份并建立新的密钥
 
-`	mkdir key_backup`
-
-`	cp id_rsa* key_backup`
-
-`	rm id_rsa*`
+```
+mkdir key_backup
+cp id_rsa* key_backup
+rm id_rsa*
+```
 
 生成新密钥
 
@@ -85,9 +87,10 @@ vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
 
 在终端输入下列代码用于github验证
 
-`	git config --global user.name “your_username”`
-
-`	git config --global user.email “your_email”`
+```
+git config --global user.name “your_username”
+git config --global user.email “your_email”
+```
 
 > 取消全局设置方法`git config --global --unset user.email`
 > 添加config：` git config --local user.email "email"`
@@ -104,9 +107,10 @@ vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
 
 在终端新建库
 
-`	mkdir usename`
-
-`	cd ./username`
+````
+mkdir usename
+cd ./username
+```
 
 初始化git
 
@@ -116,15 +120,17 @@ vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
 
 终端新建项目库
 
-`	mkdir username.github.io`
-
-`	cd ./username.github.io`
+```
+mkdir username.github.io
+cd ./username.github.io
+```
 
 clone项目到本地，由于不同库有两种方式(此处的username为目标项目名字)：
 
-`git clone git@github.com:username/username.github.io.git`
-
-`git clone git@github.com:username/reponame.git`
+```
+git clone git@github.com:username/username.github.io.git
+git clone git@github.com:username/reponame.git
+```
 
 修改本地项目后，准备推送到自己的github库
 
@@ -144,10 +150,9 @@ clone项目到本地，由于不同库有两种方式(此处的username为目标
 
 8.推送更新
 
-`git add filename`
-
-`git commit -m "备注"`
-
-`git push origin filename`
-
+```
+git add filename
+git commit -m "备注"
+git push origin filename
+```
 
