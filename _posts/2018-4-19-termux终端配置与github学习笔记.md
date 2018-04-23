@@ -2,9 +2,12 @@
 layout: post
 title: termux和github pages设置学习记
 ---
---------
-# termux和github pages设置学习记录
+> Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.
 
+> Termux是一款强大的安卓终端模拟APP，无需root直接启动，自动安装最小化linux系统，使用APT作为包管理工具并提供各种各样的软件包。
+
+本文用于记录用termux链接Github的基础配置方法。
+<!-- more -->
 ## 一、termux安装与配置
 
 1.酷安商店下载安装，备选f-droid
@@ -14,7 +17,7 @@ title: termux和github pages设置学习记
 3.输入命令，更新软件源与升级
 
 `	apt update`
-<!-- more -->
+
 `	apt upgrade`
 
 `	apt update`
