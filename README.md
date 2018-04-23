@@ -1,148 +1,134 @@
-# termux&github pages
+# Lanyon
 
---------
-# termux和github pages设置学习记录
+Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
-## 一、termux安装与配置
+![Lanyon](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
+![Lanyon with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
 
-1.酷安商店下载安装，备选f-droid
 
-2.安装好后，打开。
+## Contents
 
-3.输入命令，更新软件源与升级
+- [Usage](#usage)
+- [Options](#options)
+  - [Sidebar menu](#sidebar-menu)
+  - [Themes](#themes)
+  - [Reverse layout](#reverse-layout)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
 
-`	apt update`
 
-`	apt upgrade`
+## Usage
 
-`	apt update`
+Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
 
-`	apt upgrade`
 
-4.移除表头简介文字
+## Options
 
-`	vi .hushlogin`
+Lanyon includes some customizable options, typically applied via classes on the `<body>` element.
 
-输入:wq保存退出
 
-5.美化终端
-安装ZSH的oh-my-zsh
+### Sidebar menu
 
-`	apt install curl`
+Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
 
-输入下列代码安装
+```
+---
+layout: page
+title: About
+---
+```
 
-`sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"`
+**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
 
-默认设置一路enter
 
-## 二、必备软件与配置
+### Themes
 
-1.安装必备软件
+Lanyon ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
 
-`	apt install openssh git vim`
+![Lanyon with red theme](https://f.cloud.github.com/assets/98681/1825270/be065110-71b0-11e3-9ed8-9b8de753a4af.png)
+![Lanyon with red theme and open sidebar](https://f.cloud.github.com/assets/98681/1825269/be05ec20-71b0-11e3-91ea-a9138ef07186.png)
 
-vim支持中文方法`vi ~/.vimrc`输入`set enc=uft8`然后:wq即可。
+There are eight themes available at this time.
 
-2.配置ssh生成密钥
-首先检查SSH KEY
+![Available theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
 
-`	cd ~/.ssh`
+To use a theme, add any one of the available theme classes to the `<body>` element in the `default.html` layout, like so:
 
-`	ls`
+```html
+<body class="theme-base-08">
+  ...
+</body>
+```
 
-若是已有密钥，备份并建立新的密钥
+To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/lanyon/blob/master/public/css/lanyon.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
 
-`	mkdir key_backup`
 
-`	cp id_rsa* key_backup`
+### Reverse layout
 
-`	rm id_rsa*`
+![Lanyon with reverse layout](https://f.cloud.github.com/assets/98681/1825265/be03f2e4-71b0-11e3-89f1-360705524495.png)
+![Lanyon with reverse layout and open sidebar](https://f.cloud.github.com/assets/98681/1825268/be056174-71b0-11e3-88c8-5055bca4307f.png)
 
-生成新密钥
+Reverse the page orientation with a single class.
 
-`	ssh-keygen -t rsa -C "email"`
+```html
+<body class="layout-reverse">
+  ...
+</body>
+```
 
-一直回车，然后复制公钥id\_rsa.pub
 
-`	cat id_rsa.pub`
+### Sidebar overlay instead of push
 
-使用cat命令，方便手机端复制公钥。
+Make the sidebar overlap the viewport content with a single class:
 
-3.添加SSH Key到github
+```html
+<body class="sidebar-overlay">
+  ...
+</body>
+```
 
-* 首先要有github账号，没有的话，就先注册，然后登录。
-* 点击右上角头像，点选击settings，左侧列表点击SSH
-* 右侧点击添加新KEY
-* 将复制的公钥粘贴到框内，确定。
+This will keep the content stationary and slide in the sidebar over the side content. It also adds a `box-shadow` based outline to the toggle for contrast against backgrounds, as well as a `box-shadow` on the sidebar for depth.
 
-4.配置终端git
+It's also available for a reversed layout when you add both classes:
 
-在终端输入下列代码用于github验证
+```html
+<body class="layout-reverse sidebar-overlay">
+  ...
+</body>
+```
 
-`	git config --global user.name “your_username”`
+### Sidebar open on page load
 
-`	git config --global user.email “your_email”`
+Show an open sidebar on page load by modifying the `<input>` tag within the `sidebar.html` layout to add the `checked` boolean attribute:
 
-> 取消全局设置方法`git config --global --unset user.email`
-> 添加config：` git config --local user.email "email"`
+```html
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+```
 
-测试是否成功
+Using Liquid you can also conditionally show the sidebar open on a per-page basis. For example, here's how you could have it open on the homepage only:
 
-`	ssh -T git@github.com`
+```html
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
+```
 
-输入`yes`链接成功
+## Development
 
-5.配置github与终端项目
+Lanyon has two branches, but only one is used for active development.
 
-在github创建`username.github.io`项目，默认配置就可以。
+- `master` for development.  **All pull requests should be to submitted against `master`.**
+- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
 
-在终端新建库
 
-`	mkdir usename`
+## Author
 
-`	cd ./username`
+**Mark Otto**
+- <https://github.com/mdo>
+- <https://twitter.com/mdo>
 
-初始化git
 
-`	git init`
+## License
 
-6.clone项目
+Open sourced under the [MIT license](LICENSE.md).
 
-终端新建项目库
-
-`	mkdir username.github.io`
-
-`	cd ./username.github.io`
-
-clone项目到本地，由于不同库有两种方式(此处的username为目标项目名字)：
-
-`git clone git@github.com:username/username.github.io.git`
-
-`git clone git@github.com:username/reponame.git`
-
-修改本地项目后，准备推送到自己的github库
-
-7.关联仓库与推送
-
-在本地仓库执行下列命令
-
-`git remote add origin git@github.com:username.github.io.git`
-
-将本地库推送到远程库
-
-`git push -u origin master`
-
-> 把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
-> 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
-> 此后，每次本地提交后，只要有必要，就可以使用命令`git push origin master`推送最新修改。
-
-8.推送更新
-
-`git add filename`
-
-`git commit -m "备注"`
-
-`git push origin filename`
-
-
+<3

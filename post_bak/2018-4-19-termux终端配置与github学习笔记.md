@@ -1,7 +1,5 @@
----
-layout: post
-title: termux和github pages设置学习记
----
+# termux&github pages
+
 --------
 # termux和github pages设置学习记录
 

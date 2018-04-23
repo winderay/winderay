@@ -1,6 +1,6 @@
 ---
 
-layout: post
+layout: default
 title: 同一台电脑，多个Github账户的SSHkey切换
 
 ---
