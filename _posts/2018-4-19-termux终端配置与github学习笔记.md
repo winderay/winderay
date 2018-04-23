@@ -14,7 +14,7 @@ title: termux和github pages设置学习记
 3.输入命令，更新软件源与升级
 
 `	apt update`
-
+<!-- more -->
 `	apt upgrade`
 
 `	apt update`

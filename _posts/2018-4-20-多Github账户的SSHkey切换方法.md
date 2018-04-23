@@ -14,7 +14,7 @@ title: 同一台电脑，多个Github账户的SSHkey切换
 ` git config --global user.name "自定义用户名"`
 
 ` git config --global user.email "邮箱"`
-
+<!-- more -->
 要想配置多个账户需要先取消全局配置。
 
 ` git config --global --unset user.name`
