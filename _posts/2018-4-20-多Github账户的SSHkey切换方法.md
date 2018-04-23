@@ -5,13 +5,14 @@ title: 同一台电脑，多个Github账户的SSHkey切换
 
 ---
 
-    一台电脑有一个SSH key，在连接github时，会设置为全局密钥，当再想链接第二个账户时就会出现错误。这时我们就需要学习如何设置多个密钥，链接不同的账户。
+一台电脑有一个SSH key，在连接github时，会设置为全局密配置， 再想链接第二个账户时就会出现错误。这时我们就需要学习如何设置多个密钥，链接不同的账户。
+
 <!-- more -->
 ## 一、取消git全局设置并修改
 
 第一次跟随教程设置会用到配置*全局用户名和邮箱*，如下代码
 
-` git config --global user.name "自定义用户名"`
+` git config --global user.name "自定义用户名"`  
 ` git config --global user.email "邮箱"`
 
 要想配置多个账户需要先取消全局配置。
